@@ -9,5 +9,5 @@ rutas.post('/', createAprendiz);
 rutas.put('/:id', updateAprendiz);
 rutas.delete('/:id', deleteAprendiz);
 
-
 export default rutas;
+

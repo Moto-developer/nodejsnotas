@@ -1,4 +1,4 @@
-import datos from "../models/modelAprendiz.js";
+import datos from "../models/modelAprendizM.js";
 
 export const getAllAprendiz = async (req,res)=>{
     try{
@@ -12,7 +12,7 @@ export const getAllAprendiz = async (req,res)=>{
 export const getAprendiz = async (req,res)=>{
     try{
         const aprendiz = await datos.findAll({
-            where:{id:req.params.id}
+            where:{idAprendiz:req.params.id}
         });
         res.json(aprendiz[0])
     }catch (error){
@@ -33,9 +33,9 @@ export const createAprendiz = async (req, res)=>{
 
 export const updateAprendiz = async (req, res)=>{
     try{
-        await datos.update(req.body),{
-            where:{id:req.params.id}
-        };
+        await datos.update(req.body,{
+            where:{idAprendiz:req.params.id}
+        });
         res.json({
             "message":"Registro actualizado exitosamente"
         });
@@ -47,7 +47,7 @@ export const updateAprendiz = async (req, res)=>{
 export const deleteAprendiz = async (req, res)=>{
     try{
         await datos.destroy({
-            where:{id:req.params.id}
+            where:{idAprendiz:req.params.id}
         });
         res.json({
             "message":"Registro eliminado exitosamente"

@@ -2,6 +2,8 @@ import express  from "express";
 import cors from "cors";
 import rutas from "./routes/rutas.routes.js";
 import senaBd from "./bases/baseDatosSena.js";
+import competencia from "./routes/rutasComp.routes.js";
+import curso from "./routes/rutasCurso.routes.js";
 
 const app = express();
 
@@ -18,6 +20,8 @@ app.listen(4000,()=>{
 })
 
 app.use('/estudiantes',rutas);
+app.use('/competencias',competencia);
+app.use('/cursos',curso);
 
 try{
 
